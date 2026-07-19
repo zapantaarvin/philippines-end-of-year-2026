@@ -1,17 +1,17 @@
-<title>Piso Padyak — Plan B, Dec 13 → Jan 7</title>
+<title>Batman &amp; Catwoman — Plan B, Dec 13 → Jan 7</title>
 <style>
   :root{
-    --ink:#14212B;
-    --paper:#F7ECD6;
-    --paper-card:#FFFDF6;
-    --ocean-deep:#0A3D62;
-    --ocean-bright:#1C86C7;
-    --sun-gold:#F5B300;
-    --jeep-red:#C8402E;
-    --palm-green:#1E6E55;
-    --line:rgba(20,33,43,.14);
-    --shadow:0 18px 40px -20px rgba(10,40,60,.35);
-    --shadow-sm:0 8px 20px -12px rgba(10,40,60,.3);
+    --ink:#1F1330;
+    --paper:#F1E7F2;
+    --paper-card:#FBF6FC;
+    --ocean-deep:#3A1B57;
+    --ocean-bright:#8B5FBF;
+    --sun-gold:#FFB84D;
+    --jeep-red:#E23B6E;
+    --palm-green:#2E8B87;
+    --line:rgba(31,19,48,.14);
+    --shadow:0 18px 40px -20px rgba(58,27,87,.35);
+    --shadow-sm:0 8px 20px -12px rgba(58,27,87,.3);
     --radius:18px;
     --font-display:"Arial Black","Arial Bold","Helvetica Neue",sans-serif;
     --font-body:"Trebuchet MS","Segoe UI","Verdana",sans-serif;
@@ -19,30 +19,30 @@
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --ink:#EFE6D2;
-      --paper:#0B1620;
-      --paper-card:#12222F;
-      --ocean-deep:#0E4A73;
-      --ocean-bright:#3FA9E0;
-      --sun-gold:#FFC94A;
-      --jeep-red:#FF6E5A;
-      --palm-green:#3FB08E;
-      --line:rgba(239,230,210,.16);
+      --ink:#F0E6F5;
+      --paper:#170F22;
+      --paper-card:#241733;
+      --ocean-deep:#6B3AA0;
+      --ocean-bright:#B98AE0;
+      --sun-gold:#FFC873;
+      --jeep-red:#FF6F9C;
+      --palm-green:#4FC3BC;
+      --line:rgba(240,230,245,.16);
       --shadow:0 18px 40px -20px rgba(0,0,0,.6);
       --shadow-sm:0 8px 20px -12px rgba(0,0,0,.55);
     }
   }
   :root[data-theme="dark"]{
-    --ink:#EFE6D2; --paper:#0B1620; --paper-card:#12222F;
-    --ocean-deep:#0E4A73; --ocean-bright:#3FA9E0; --sun-gold:#FFC94A;
-    --jeep-red:#FF6E5A; --palm-green:#3FB08E; --line:rgba(239,230,210,.16);
+    --ink:#F0E6F5; --paper:#170F22; --paper-card:#241733;
+    --ocean-deep:#6B3AA0; --ocean-bright:#B98AE0; --sun-gold:#FFC873;
+    --jeep-red:#FF6F9C; --palm-green:#4FC3BC; --line:rgba(240,230,245,.16);
     --shadow:0 18px 40px -20px rgba(0,0,0,.6); --shadow-sm:0 8px 20px -12px rgba(0,0,0,.55);
   }
   :root[data-theme="light"]{
-    --ink:#14212B; --paper:#F7ECD6; --paper-card:#FFFDF6;
-    --ocean-deep:#0A3D62; --ocean-bright:#1C86C7; --sun-gold:#F5B300;
-    --jeep-red:#C8402E; --palm-green:#1E6E55; --line:rgba(20,33,43,.14);
-    --shadow:0 18px 40px -20px rgba(10,40,60,.35); --shadow-sm:0 8px 20px -12px rgba(10,40,60,.3);
+    --ink:#1F1330; --paper:#F1E7F2; --paper-card:#FBF6FC;
+    --ocean-deep:#3A1B57; --ocean-bright:#8B5FBF; --sun-gold:#FFB84D;
+    --jeep-red:#E23B6E; --palm-green:#2E8B87; --line:rgba(31,19,48,.14);
+    --shadow:0 18px 40px -20px rgba(58,27,87,.35); --shadow-sm:0 8px 20px -12px rgba(58,27,87,.3);
   }
 
   *{box-sizing:border-box;}
@@ -111,17 +111,17 @@
   /* ---------- hero ---------- */
   .hero{
     position:relative;padding:clamp(64px,14vh,120px) 0 clamp(40px,8vh,64px);
-    overflow:hidden;background:linear-gradient(180deg,var(--ocean-deep) 0%, #0d5786 55%, var(--paper) 100%);
+    overflow:hidden;background:linear-gradient(180deg,var(--ocean-deep) 0%, #8B3F9E 55%, var(--paper) 100%);
     color:#FBF4E4;
   }
   .hero-sky{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
   .hero-sun{
     position:absolute;right:12%;top:14%;width:min(30vw,240px);height:min(30vw,240px);
     border-radius:50%;background:radial-gradient(circle at 35% 35%, #FFE28A, var(--sun-gold) 60%, #E08A00 100%);
-    box-shadow:0 0 90px 10px rgba(245,179,0,.55);
+    box-shadow:0 0 90px 10px rgba(255,184,77,.55);
   }
   .hero-sun .ray{position:absolute;inset:-40%;border-radius:50%;
-    background:repeating-conic-gradient(rgba(255,220,140,.35) 0 4deg, transparent 4deg 20deg);
+    background:repeating-conic-gradient(rgba(255,200,220,.32) 0 4deg, transparent 4deg 20deg);
     animation:spin 60s linear infinite;
   }
   @media (prefers-reduced-motion: reduce){ .hero-sun .ray{animation:none;} }
@@ -156,7 +156,7 @@
   .hero-dates{
     margin-top:30px;display:inline-flex;gap:14px;align-items:center;
     font-family:var(--font-mono);font-size:.85rem;letter-spacing:.05em;
-    background:rgba(11,22,32,.28);border:1px dashed rgba(255,255,255,.4);
+    background:rgba(30,12,45,.32);border:1px dashed rgba(255,255,255,.4);
     padding:10px 20px;border-radius:12px;
   }
   .hero-dates b{color:var(--sun-gold);font-weight:700;}
@@ -228,8 +228,8 @@
   .day-main h4{font-family:var(--font-body);font-weight:700;font-size:1.02rem;margin-bottom:4px;}
   .day-main p{font-size:.92rem;opacity:.82;}
   .split{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
-  .split-item{flex:1 1 170px;border-left:3px solid var(--ocean-bright);border-radius:0 8px 8px 0;background:rgba(28,134,199,.08);padding:7px 10px;}
-  .split-item.who-kim{border-left-color:var(--jeep-red);background:rgba(200,64,46,.08);}
+  .split-item{flex:1 1 170px;border-left:3px solid var(--palm-green);border-radius:0 8px 8px 0;background:rgba(46,139,135,.1);padding:7px 10px;}
+  .split-item.who-kim{border-left-color:var(--jeep-red);background:rgba(226,59,110,.08);}
   .split-who{font-family:var(--font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;opacity:.65;display:block;margin-bottom:2px;}
   .split-item p{font-size:.86rem;opacity:.85;}
   .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
@@ -343,15 +343,15 @@
         <circle cx="32" cy="32" r="30" fill="none" stroke="var(--sun-gold)" stroke-width="2"/>
         <circle cx="32" cy="32" r="24" fill="var(--ocean-deep)"/>
         <path id="arcPath" d="M 10,32 A 22,22 0 0,1 54,32" fill="none"/>
-        <text font-family="Arial Black, sans-serif" font-size="6.2" fill="#F7ECD6" letter-spacing="1.5">
-          <textPath href="#arcPath" startOffset="50%" text-anchor="middle">PISO · PADYAK</textPath>
+        <text font-family="Arial Black, sans-serif" font-size="4.6" fill="#F1E7F2" letter-spacing="0.3">
+          <textPath href="#arcPath" startOffset="50%" text-anchor="middle">BATMAN · CATWOMAN</textPath>
         </text>
         <g fill="var(--sun-gold)">
           <polygon points="32,20 33.6,24.6 38.4,24.6 34.6,27.5 36,32 32,29.2 28,32 29.4,27.5 25.6,24.6 30.4,24.6"/>
         </g>
         <path d="M20,42 q12,6 24,0" stroke="var(--sun-gold)" stroke-width="1.4" fill="none"/>
       </svg>
-      <span>Piso&nbsp;Padyak <span class="brand-badge">Plan B</span></span>
+      <span>Batman &amp; Catwoman <span class="brand-badge">Plan B</span></span>
     </div>
     <div class="chips" id="chips">
       <button class="chip" data-target="#leg-laspinas">1 · Las Piñas</button>
@@ -791,12 +791,12 @@
 
 <footer>
   <svg class="emblem" viewBox="0 0 64 64" role="img" aria-label="Trip emblem">
-    <circle cx="32" cy="32" r="30" fill="none" stroke="#F5B300" stroke-width="2"/>
-    <circle cx="32" cy="32" r="24" fill="#0A3D62"/>
-    <g fill="#F5B300">
+    <circle cx="32" cy="32" r="30" fill="none" stroke="#FFB84D" stroke-width="2"/>
+    <circle cx="32" cy="32" r="24" fill="#3A1B57"/>
+    <g fill="#FFB84D">
       <polygon points="32,20 33.6,24.6 38.4,24.6 34.6,27.5 36,32 32,29.2 28,32 29.4,27.5 25.6,24.6 30.4,24.6"/>
     </g>
-    <path d="M20,42 q12,6 24,0" stroke="#F5B300" stroke-width="1.4" fill="none"/>
+    <path d="M20,42 q12,6 24,0" stroke="#FFB84D" stroke-width="1.4" fill="none"/>
   </svg>
   <h3>See you at Manila, Jan 7</h3>
   <p>Plan B: exactly five days for all of Palawan, Cebu dropped to protect Boracay, and every stop nature‑ and activity‑forward.</p>
