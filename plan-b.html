@@ -227,6 +227,11 @@
   .day-main{padding:14px 18px;}
   .day-main h4{font-family:var(--font-body);font-weight:700;font-size:1.02rem;margin-bottom:4px;}
   .day-main p{font-size:.92rem;opacity:.82;}
+  .split{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+  .split-item{flex:1 1 170px;border-left:3px solid var(--ocean-bright);border-radius:0 8px 8px 0;background:rgba(28,134,199,.08);padding:7px 10px;}
+  .split-item.who-kim{border-left-color:var(--jeep-red);background:rgba(200,64,46,.08);}
+  .split-who{font-family:var(--font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;opacity:.65;display:block;margin-bottom:2px;}
+  .split-item p{font-size:.86rem;opacity:.85;}
   .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
   .tag{
     font-family:var(--font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;
@@ -553,10 +558,18 @@
           <div class="day-main"><h4>El Nido → Bohol</h4><p>Fly ENI → Bohol (Panglao) via Manila or Cebu. Check in around Alona Beach, confirm the referral dive schedule.</p>
           <div class="tag-row"><span class="tag fly">Flight</span></div></div></article>
         <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">23</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Open Water referral — Day 1</h4><p>Dives 1 &amp; 2 on the local reefs around Panglao.</p>
-          <div class="tag-row"><span class="tag sea">Diving</span></div></div></article>
+          <div class="day-main"><h4>Open Water referral — Day 1</h4>
+          <div class="split">
+            <div class="split-item who-you"><span class="split-who">You</span><p>Dives 1 &amp; 2 on the local reefs around Panglao.</p></div>
+            <div class="split-item who-kim"><span class="split-who">Kim</span><p>Chocolate Hills, Tarsier Sanctuary &amp; Loboc River day trip.</p></div>
+          </div>
+          <div class="tag-row"><span class="tag sea">Diving</span><span class="tag rest">Countryside</span></div></div></article>
         <article class="day reveal"><div class="day-date"><span class="dow">Thu</span><span class="dnum">24</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Open Water referral — Day 2</h4><p>Dives 3 &amp; 4 — certification complete.</p>
+          <div class="day-main"><h4>Open Water referral — Day 2</h4>
+          <div class="split">
+            <div class="split-item who-you"><span class="split-who">You</span><p>Dives 3 &amp; 4 — certification complete.</p></div>
+            <div class="split-item who-kim"><span class="split-who">Kim</span><p>Turtle snorkel trip off Panglao / Pamilacan Island.</p></div>
+          </div>
           <div class="tag-row"><span class="tag sea">Diving</span><span class="tag rest">Certified 🤿</span></div></div></article>
         <article class="day reveal"><div class="day-date"><span class="dow">Fri</span><span class="dnum">25</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>Balicasag fun dives</h4><p>Christmas Day on the water — two fun dives with the jackfish "tornado" and resident turtles.</p>
