@@ -281,6 +281,10 @@
   .scene .plane{position:absolute;width:40px;height:10px;background:#EDEDED;border-radius:0 8px 8px 0;}
   .scene .plane::before{content:"";position:absolute;right:100%;top:2px;width:10px;height:6px;background:#EDEDED;border-radius:4px 0 0 4px;}
   .scene .trail{position:absolute;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7));}
+  .scene .canopy{position:absolute;bottom:0;border-radius:50% 50% 0 0;background:linear-gradient(180deg,var(--land),var(--land2));}
+  .scene .falls{position:absolute;top:0;background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(210,240,245,.65));border-radius:0 0 40% 40%;filter:blur(.3px);}
+  .scene .falls::after{content:"";position:absolute;left:-30%;right:-30%;bottom:-6px;height:10px;background:rgba(255,255,255,.8);border-radius:50%;filter:blur(2px);}
+  .scene .trunk-big{position:absolute;bottom:0;background:linear-gradient(180deg,#8a6438,#4d331a);border-radius:6px 6px 0 0;}
 
   /* Pampanga (arrival, dusk, nipa hut) */
   .scene--pampanga{--sky-a:#F7CE85;--sky-b:#B85C6B;--sea-a:#c98a55;--sea-b:#5b3a2a;--land:#6f4a2e;--land2:#3d2a1c;--accent:#FFDE8A;}
@@ -288,6 +292,8 @@
   .scene--elnido{--sky-a:#BDEBFF;--sky-b:#4FB3DE;--sea-a:#22C1D6;--sea-b:#0A5C79;--land:#7fa88c;--land2:#3f6350;--accent:#FFE28A;}
   /* Bohol (chocolate hills) */
   .scene--bohol{--sky-a:#CFEAFF;--sky-b:#7FC1E8;--sea-a:#0f8f7a;--sea-b:#0a5c4d;--land:#8a5a34;--land2:#5c3c22;--accent:#FFD37A;}
+  /* Siquijor (jungle waterfall, mystic island) */
+  .scene--siquijor{--sky-a:#DCEFC8;--sky-b:#8FC08A;--sea-a:#2FA6A0;--sea-b:#116B66;--land:#3E7D4C;--land2:#1F4A2A;--accent:#CFF4D8;}
   /* Las Pinas Christmas (night, parol) */
   .scene--laspinas{--sky-a:#16324f;--sky-b:#081824;--sea-a:#16324f;--sea-b:#081824;--land:#0e2438;--land2:#081824;--accent:#F5B300;}
   /* Boracay (sunset) */
@@ -366,7 +372,7 @@
     <div class="glance-stats">
       <div class="stat"><b>26</b><span>Days</span></div>
       <div class="stat"><b>7</b><span>Legs</span></div>
-      <div class="stat"><b>4</b><span>Islands</span></div>
+      <div class="stat"><b>5</b><span>Islands</span></div>
       <div class="stat"><b>1</b><span>Summit sunrise</span></div>
       <div class="stat"><b>4</b><span>Certifying dives</span></div>
     </div>
@@ -376,8 +382,8 @@
       <div class="route-track" id="routeTrack">
         <div class="route-line"></div>
         <button class="route-stop" data-target="#leg-pampanga"><span class="dotmark">1</span><b>Pampanga</b><span>Dec 13</span></button>
-        <button class="route-stop" data-target="#leg-elnido"><span class="dotmark">2</span><b>El Nido</b><span>Dec 17</span></button>
-        <button class="route-stop" data-target="#leg-bohol"><span class="dotmark">3</span><b>Bohol</b><span>Dec 20</span></button>
+        <button class="route-stop" data-target="#leg-elnido"><span class="dotmark">2</span><b>El Nido</b><span>Dec 15</span></button>
+        <button class="route-stop" data-target="#leg-bohol"><span class="dotmark">3</span><b>Bohol</b><span>Dec 18</span></button>
         <button class="route-stop" data-target="#leg-laspinas"><span class="dotmark">4</span><b>Las Piñas</b><span>Dec 25</span></button>
         <button class="route-stop" data-target="#leg-boracay"><span class="dotmark">5</span><b>Boracay</b><span>Dec 28</span></button>
         <button class="route-stop" data-target="#leg-cordillera"><span class="dotmark">6</span><b>Cordillera</b><span>Jan 2</span></button>
@@ -385,7 +391,7 @@
       </div>
     </div>
 
-    <p class="intro">Starts at Clark, loops down through Palawan and Bohol, comes home for Christmas in Las Piñas, parties into the New Year on Boracay, then climbs into the Cordillera for one last push before flying out. Tap a stop above to jump straight there.</p>
+    <p class="intro">Starts at Clark, picks up Kim in Las Piñas, then loops down through Palawan, Bohol, and a Siquijor detour, comes home for Christmas in Las Piñas, parties into the New Year on Boracay, then climbs into the Cordillera for one last push before flying out. Tap a stop above to jump straight there.</p>
   </div>
 
   <!-- LEG 1 — PAMPANGA -->
@@ -404,9 +410,9 @@
         <div class="sea" style="height:16%;"></div>
       </div>
       <div class="leg-hero-caption">
-        <span class="leg-num">Leg 01 · Dec 13 – Dec 16</span>
+        <span class="leg-num">Leg 01 · Dec 13 – Dec 14</span>
         <h2>Pampanga</h2>
-        <p>Touchdown, family, and slow prep before the islands</p>
+        <p>Touchdown and a couple of slow days before the islands</p>
       </div>
     </div>
     <div class="leg-body">
@@ -414,12 +420,9 @@
         <article class="day reveal"><div class="day-date"><span class="dow">Sun</span><span class="dnum">13</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>Arrival in the Philippines</h4><p>Land at Clark (CRK), head to Pampanga, rest with family after the flight.</p>
           <div class="tag-row"><span class="tag fly">Flight in</span><span class="tag rest">Family time</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Mon–Tue</span><span class="dnum">14–15</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Pampanga, wide open</h4><p>Flexible days for family time, errands, and locking in bookings.</p>
+        <article class="day reveal"><div class="day-date"><span class="dow">Mon</span><span class="dnum">14</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Pampanga, wide open</h4><p>Flexible day for family time, errands, and locking in bookings.</p>
           <div class="tag-row"><span class="tag rest">Flexible</span><span class="tag rest">Bookings</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">16</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Pampanga → Las Piñas — pick up Kim</h4><p>Head to Las Piñas to pick up Kim before heading into the islands together.</p>
-          <div class="tag-row"><span class="tag rest">Pick up Kim</span></div></div></article>
       </div>
     </div>
   </section>
@@ -437,20 +440,20 @@
         <div class="boat" style="width:36px;height:12px;left:44%;bottom:20%;"></div>
       </div>
       <div class="leg-hero-caption">
-        <span class="leg-num">Leg 02 · Dec 17 – Dec 19</span>
+        <span class="leg-num">Leg 02 · Dec 15 – Dec 17</span>
         <h2>El Nido, Palawan</h2>
         <p>Limestone cliffs, hidden lagoons, sunset over Corong‑Corong</p>
       </div>
     </div>
     <div class="leg-body">
       <div class="day-list">
-        <article class="day reveal"><div class="day-date"><span class="dow">Thu</span><span class="dnum">17</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Manila → El Nido</h4><p>Fly MNL → El Nido (ENI) via AirSwift or Cebgo. Check in, wander the town, catch sunset at Corong‑Corong / Las Cabañas.</p>
-          <div class="tag-row"><span class="tag fly">Flight</span><span class="tag rest">Sunset</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Fri</span><span class="dnum">18</span><span class="mon">Dec</span></div>
+        <article class="day reveal"><div class="day-date"><span class="dow">Tue</span><span class="dnum">15</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Pampanga → Las Piñas → El Nido</h4><p>Pick up Kim in Las Piñas, then fly MNL → El Nido (ENI) via AirSwift or Cebgo. Check in, catch sunset at Corong‑Corong / Las Cabañas.</p>
+          <div class="tag-row"><span class="tag rest">Pick up Kim</span><span class="tag fly">Flight</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">16</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>Island Hopping — Tour A</h4><p>Big Lagoon, Secret Lagoon, Shimizu Island, 7 Commandos Beach.</p>
           <div class="tag-row"><span class="tag sea">Island hopping</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Sat</span><span class="dnum">19</span><span class="mon">Dec</span></div>
+        <article class="day reveal"><div class="day-date"><span class="dow">Thu</span><span class="dnum">17</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>Tour C or Nacpan Beach</h4><p>Either Tour C (Matinloc, hidden beaches) or a full day at Nacpan — or split the two.</p>
           <div class="tag-row"><span class="tag sea">Island hopping</span><span class="tag rest">Beach day</span></div></div></article>
       </div>
@@ -507,32 +510,38 @@
         <div class="hill" style="left:82%;width:85px;height:75px;"></div>
       </div>
       <div class="leg-hero-caption">
-        <span class="leg-num">Leg 03 · Dec 20 – Dec 24</span>
-        <h2>Bohol</h2>
-        <p>Open Water certification, Balicasag, chocolate hills</p>
+        <span class="leg-num">Leg 03 · Dec 18 – Dec 24</span>
+        <h2>Bohol &amp; Siquijor</h2>
+        <p>Open Water certification, Balicasag, and a detour to mystic Siquijor</p>
       </div>
     </div>
     <div class="leg-body">
       <div class="day-list">
-        <article class="day reveal"><div class="day-date"><span class="dow">Sun</span><span class="dnum">20</span><span class="mon">Dec</span></div>
+        <article class="day reveal"><div class="day-date"><span class="dow">Fri</span><span class="dnum">18</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>El Nido → Bohol</h4><p>Fly ENI → Bohol (Panglao) via Manila or Cebu. Check in around Alona Beach, confirm the referral dive schedule.</p>
           <div class="tag-row"><span class="tag fly">Flight</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Mon</span><span class="dnum">21</span><span class="mon">Dec</span></div>
+        <article class="day reveal"><div class="day-date"><span class="dow">Sat</span><span class="dnum">19</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>Open Water referral — Day 1</h4><p>Dives 1 & 2 on the local reefs around Panglao.</p>
           <div class="tag-row"><span class="tag sea">Diving</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Tue</span><span class="dnum">22</span><span class="mon">Dec</span></div>
+        <article class="day reveal"><div class="day-date"><span class="dow">Sun</span><span class="dnum">20</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>Open Water referral — Day 2</h4><p>Dives 3 & 4 — certification complete.</p>
           <div class="tag-row"><span class="tag sea">Diving</span><span class="tag rest">Certified 🤿</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">23</span><span class="mon">Dec</span></div>
+        <article class="day reveal"><div class="day-date"><span class="dow">Mon</span><span class="dnum">21</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>Balicasag fun dives</h4><p>Two fun dives — the jackfish "tornado" and resident turtles.</p>
           <div class="tag-row"><span class="tag sea">Diving</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Tue</span><span class="dnum">22</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Bohol → Siquijor</h4><p>Ferry from Tagbilaran/Panglao over to Siquijor. Afternoon at Cambugahay Falls and Salagdoong Beach, overnight in town.</p>
+          <div class="tag-row"><span class="tag sea">Ferry</span><span class="tag hike">Waterfalls</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">23</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Siquijor → back to Bohol</h4><p>Morning at the Old Enchanted Balete Tree and the fish spa beneath it, then ferry back to Tagbilaran.</p>
+          <div class="tag-row"><span class="tag sea">Ferry</span><span class="tag rest">Balete Tree</span></div></div></article>
         <article class="day reveal"><div class="day-date"><span class="dow">Thu</span><span class="dnum">24</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Countryside, then fly to Manila</h4><p>Chocolate Hills, tarsiers and Loboc River in the morning (or an extra dive), then Bohol (TAG) → Manila (MNL) in the evening.</p>
+          <div class="day-main"><h4>Chocolate Hills, then fly to Manila</h4><p>Chocolate Hills, tarsiers and Loboc River in the morning, then Bohol (TAG) → Manila (MNL) in the evening — in time for Christmas.</p>
           <div class="tag-row"><span class="tag rest">Countryside</span><span class="tag fly">Flight</span></div></div></article>
       </div>
 
       <div class="carousel" data-autoplay="5600">
-        <div class="carousel-heading"><h3>Bohol Postcards</h3>
+        <div class="carousel-heading"><h3>Bohol &amp; Siquijor Postcards</h3>
           <div class="car-controls"><button class="car-btn prev" aria-label="Previous">‹</button><button class="car-btn next" aria-label="Next">›</button></div>
         </div>
         <div class="carousel-track">
@@ -554,12 +563,20 @@
               <div class="spark" style="left:60%;top:35%;"></div>
               <div class="spark" style="left:70%;top:60%;"></div>
             </div><div class="slide-body"><h4>Balicasag Island</h4><p>Jackfish tornado and green sea turtles, fun‑dive day.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--bohol" style="--sky-a:#e7f5d8;--sky-b:#bcd8a0;">
-              <div class="sea" style="height:20%;--sea-a:#4a8f5a;--sea-b:#2c5c38;"></div>
-              <div class="palm-trunk" style="left:30%;bottom:20%;height:60px;"></div>
-              <div class="palm-frond" style="left:30%;bottom:74px;transform:rotate(-20deg);"></div>
-              <div class="palm-frond" style="left:30%;bottom:70px;transform:rotate(20deg);"></div>
-            </div><div class="slide-body"><h4>Loboc River &amp; Tarsiers</h4><p>Slow river cruise and the world's smallest primate.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--siquijor">
+              <div class="canopy" style="left:-6%;width:70px;height:90px;"></div>
+              <div class="canopy" style="left:70%;width:80px;height:100px;"></div>
+              <div class="falls" style="left:42%;width:16%;height:78%;"></div>
+              <div class="sea" style="height:16%;"></div>
+            </div><div class="slide-body"><h4>Cambugahay Falls</h4><p>Tiered turquoise pools deep in the jungle, rope swing included.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--siquijor" style="--sky-a:#EAF6D8;--sky-b:#A9D19C;">
+              <div class="sea" style="height:22%;--sea-a:#2FA6A0;--sea-b:#116B66;"></div>
+              <div class="trunk-big" style="left:42%;width:26px;height:70%;"></div>
+              <div class="canopy" style="left:22%;width:120px;height:70px;bottom:60%;"></div>
+              <div class="spark" style="left:20%;top:20%;"></div>
+              <div class="spark" style="left:70%;top:30%;"></div>
+              <div class="spark" style="left:55%;top:14%;"></div>
+            </div><div class="slide-body"><h4>Old Balete Tree</h4><p>A centuries‑old tree, a fish spa at its roots, said to hold healers' magic.</p></div></article>
         </div>
         <div class="car-dots"></div>
       </div>
