@@ -97,6 +97,15 @@
     transition:opacity .2s;white-space:nowrap;
   }
   .plan-link:hover{opacity:1;}
+  .plan-switch{display:flex;gap:4px;flex:none;}
+  .plan-chip{
+    font-family:var(--font-mono);font-size:.7rem;font-weight:700;text-decoration:none;color:var(--ink);
+    width:26px;height:26px;border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;opacity:.55;
+    transition:opacity .2s, background .2s, color .2s, border-color .2s;
+  }
+  .plan-chip:hover{opacity:1;}
+  .plan-chip.current{opacity:1;background:var(--ocean-deep);color:#fff;border-color:var(--ocean-deep);}
   .chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px;}
   .chips::-webkit-scrollbar{display:none;}
   .chip{
@@ -361,7 +370,11 @@
       <button class="chip" data-target="#leg-cordillera">5 · Cordillera</button>
       <button class="chip" data-target="#leg-departure">6 · Departure</button>
     </div>
-    <a class="plan-link" href="index.html">↺ View Plan A</a>
+    <div class="plan-switch">
+      <a class="plan-chip" href="index.html">A</a>
+      <a class="plan-chip current" href="plan-b.html">B</a>
+      <a class="plan-chip" href="plan-c.html">C</a>
+    </div>
   </div>
 </nav>
 
@@ -800,7 +813,11 @@
   </svg>
   <h3>See you at Manila, Jan 7</h3>
   <p>Plan B: exactly five days for all of Palawan, Cebu dropped to protect Boracay, and every stop nature‑ and activity‑forward.</p>
-  <a class="plan-link" href="index.html">↺ Back to Plan A</a>
+  <div class="plan-switch" style="justify-content:center;margin-top:16px;">
+    <a class="plan-chip" href="index.html" style="border-color:rgba(255,255,255,.35);">A</a>
+    <a class="plan-chip current" href="plan-b.html" style="border-color:rgba(255,255,255,.35);">B</a>
+    <a class="plan-chip" href="plan-c.html" style="border-color:rgba(255,255,255,.35);">C</a>
+  </div>
 </footer>
 
 <script>

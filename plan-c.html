@@ -1,17 +1,17 @@
-<title>Batman &amp; Catwoman — Philippines, Dec 13 → Jan 7</title>
+<title>Batman &amp; Catwoman — Plan C, Dec 13 → Jan 7</title>
 <style>
   :root{
-    --ink:#14212B;
-    --paper:#F7ECD6;
-    --paper-card:#FFFDF6;
-    --ocean-deep:#0A3D62;
-    --ocean-bright:#1C86C7;
-    --sun-gold:#F5B300;
-    --jeep-red:#C8402E;
-    --palm-green:#1E6E55;
-    --line:rgba(20,33,43,.14);
-    --shadow:0 18px 40px -20px rgba(10,40,60,.35);
-    --shadow-sm:0 8px 20px -12px rgba(10,40,60,.3);
+    --ink:#0F2E2B;
+    --paper:#E9F3EF;
+    --paper-card:#FBFEFC;
+    --ocean-deep:#0E5C55;
+    --ocean-bright:#17A398;
+    --sun-gold:#FF9F45;
+    --jeep-red:#E85D4C;
+    --palm-green:#3C8F4E;
+    --line:rgba(15,46,43,.14);
+    --shadow:0 18px 40px -20px rgba(14,92,85,.35);
+    --shadow-sm:0 8px 20px -12px rgba(14,92,85,.3);
     --radius:18px;
     --font-display:"Arial Black","Arial Bold","Helvetica Neue",sans-serif;
     --font-body:"Trebuchet MS","Segoe UI","Verdana",sans-serif;
@@ -19,30 +19,30 @@
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --ink:#EFE6D2;
-      --paper:#0B1620;
-      --paper-card:#12222F;
-      --ocean-deep:#0E4A73;
-      --ocean-bright:#3FA9E0;
-      --sun-gold:#FFC94A;
-      --jeep-red:#FF6E5A;
-      --palm-green:#3FB08E;
-      --line:rgba(239,230,210,.16);
+      --ink:#E6F5F0;
+      --paper:#0A1F1C;
+      --paper-card:#12332E;
+      --ocean-deep:#1C8478;
+      --ocean-bright:#3FD6C2;
+      --sun-gold:#FFB870;
+      --jeep-red:#FF8672;
+      --palm-green:#5FCB7A;
+      --line:rgba(230,245,240,.16);
       --shadow:0 18px 40px -20px rgba(0,0,0,.6);
       --shadow-sm:0 8px 20px -12px rgba(0,0,0,.55);
     }
   }
   :root[data-theme="dark"]{
-    --ink:#EFE6D2; --paper:#0B1620; --paper-card:#12222F;
-    --ocean-deep:#0E4A73; --ocean-bright:#3FA9E0; --sun-gold:#FFC94A;
-    --jeep-red:#FF6E5A; --palm-green:#3FB08E; --line:rgba(239,230,210,.16);
+    --ink:#E6F5F0; --paper:#0A1F1C; --paper-card:#12332E;
+    --ocean-deep:#1C8478; --ocean-bright:#3FD6C2; --sun-gold:#FFB870;
+    --jeep-red:#FF8672; --palm-green:#5FCB7A; --line:rgba(230,245,240,.16);
     --shadow:0 18px 40px -20px rgba(0,0,0,.6); --shadow-sm:0 8px 20px -12px rgba(0,0,0,.55);
   }
   :root[data-theme="light"]{
-    --ink:#14212B; --paper:#F7ECD6; --paper-card:#FFFDF6;
-    --ocean-deep:#0A3D62; --ocean-bright:#1C86C7; --sun-gold:#F5B300;
-    --jeep-red:#C8402E; --palm-green:#1E6E55; --line:rgba(20,33,43,.14);
-    --shadow:0 18px 40px -20px rgba(10,40,60,.35); --shadow-sm:0 8px 20px -12px rgba(10,40,60,.3);
+    --ink:#0F2E2B; --paper:#E9F3EF; --paper-card:#FBFEFC;
+    --ocean-deep:#0E5C55; --ocean-bright:#17A398; --sun-gold:#FF9F45;
+    --jeep-red:#E85D4C; --palm-green:#3C8F4E; --line:rgba(15,46,43,.14);
+    --shadow:0 18px 40px -20px rgba(14,92,85,.35); --shadow-sm:0 8px 20px -12px rgba(14,92,85,.3);
   }
 
   *{box-sizing:border-box;}
@@ -86,6 +86,20 @@
   }
   .brand{display:flex;align-items:center;gap:10px;flex:none;font-family:var(--font-display);letter-spacing:.02em;font-size:.95rem;text-transform:uppercase;}
   .brand svg{width:34px;height:34px;flex:none;}
+  .brand-badge{
+    font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;
+    background:var(--jeep-red);color:#fff;padding:2px 7px;border-radius:5px;
+    text-transform:uppercase;vertical-align:2px;
+  }
+  .plan-switch{display:flex;gap:4px;flex:none;}
+  .plan-chip{
+    font-family:var(--font-mono);font-size:.7rem;font-weight:700;text-decoration:none;color:var(--ink);
+    width:26px;height:26px;border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;opacity:.55;
+    transition:opacity .2s, background .2s, color .2s, border-color .2s;
+  }
+  .plan-chip:hover{opacity:1;}
+  .plan-chip.current{opacity:1;background:var(--ocean-deep);color:#fff;border-color:var(--ocean-deep);}
   .chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px;}
   .chips::-webkit-scrollbar{display:none;}
   .chip{
@@ -96,31 +110,21 @@
   }
   .chip:hover{opacity:1;}
   .chip.active{opacity:1;background:var(--ocean-deep);color:#fff;border-color:var(--ocean-deep);}
-  .plan-switch{display:flex;gap:4px;flex:none;}
-  .plan-chip{
-    font-family:var(--font-mono);font-size:.7rem;font-weight:700;text-decoration:none;color:var(--ink);
-    width:26px;height:26px;border-radius:50%;border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;opacity:.55;
-    transition:opacity .2s, background .2s, color .2s, border-color .2s;
-  }
-  .plan-chip:hover{opacity:1;}
-  .plan-chip.current{opacity:1;background:var(--ocean-deep);color:#fff;border-color:var(--ocean-deep);}
 
   /* ---------- hero ---------- */
   .hero{
     position:relative;padding:clamp(64px,14vh,120px) 0 clamp(40px,8vh,64px);
-    overflow:hidden;background:linear-gradient(180deg,var(--ocean-deep) 0%, #0d5786 55%, var(--paper) 100%);
+    overflow:hidden;background:linear-gradient(180deg,var(--ocean-deep) 0%, #159C87 55%, var(--paper) 100%);
     color:#FBF4E4;
   }
-  :root[data-theme="light"] .hero, .hero{ }
   .hero-sky{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
   .hero-sun{
     position:absolute;right:12%;top:14%;width:min(30vw,240px);height:min(30vw,240px);
-    border-radius:50%;background:radial-gradient(circle at 35% 35%, #FFE28A, var(--sun-gold) 60%, #E08A00 100%);
-    box-shadow:0 0 90px 10px rgba(245,179,0,.55);
+    border-radius:50%;background:radial-gradient(circle at 35% 35%, #FFE0B0, var(--sun-gold) 60%, #E07A2A 100%);
+    box-shadow:0 0 90px 10px rgba(255,159,69,.55);
   }
   .hero-sun .ray{position:absolute;inset:-40%;border-radius:50%;
-    background:repeating-conic-gradient(rgba(255,220,140,.35) 0 4deg, transparent 4deg 20deg);
+    background:repeating-conic-gradient(rgba(255,210,170,.3) 0 4deg, transparent 4deg 20deg);
     animation:spin 60s linear infinite;
   }
   @media (prefers-reduced-motion: reduce){ .hero-sun .ray{animation:none;} }
@@ -133,8 +137,6 @@
     background:repeating-linear-gradient(90deg, rgba(255,255,255,.10) 0 40px, transparent 40px 90px);
     border-radius:50%;
   }
-  .hero-jeep{position:absolute;left:6%;bottom:6%;width:min(46vw,320px);opacity:.9;}
-
   .hero-content{position:relative;z-index:2;text-align:center;padding:0 clamp(16px,5vw,32px);}
   .hero-eyebrow{
     display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);
@@ -142,21 +144,22 @@
     background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);
     padding:6px 14px;border-radius:999px;margin-bottom:22px;
   }
+  .hero-eyebrow b{color:var(--sun-gold);}
   .hero h1{
     font-size:clamp(2.6rem,7vw,5.4rem);line-height:.98;letter-spacing:-.01em;
-    text-transform:uppercase;margin:0 auto;max-width:14ch;
+    text-transform:uppercase;margin:0 auto;max-width:16ch;
   }
   .hero h1 em{
     font-style:normal;color:var(--sun-gold);display:block;
     transform:skewX(-6deg) translateX(2%);
   }
   .hero-sub{
-    max-width:46ch;margin:20px auto 0;font-size:1.08rem;color:#FBF4E4;opacity:.92;
+    max-width:48ch;margin:20px auto 0;font-size:1.08rem;color:#FBF4E4;opacity:.92;
   }
   .hero-dates{
     margin-top:30px;display:inline-flex;gap:14px;align-items:center;
     font-family:var(--font-mono);font-size:.85rem;letter-spacing:.05em;
-    background:rgba(11,22,32,.28);border:1px dashed rgba(255,255,255,.4);
+    background:rgba(6,30,28,.32);border:1px dashed rgba(255,255,255,.4);
     padding:10px 20px;border-radius:12px;
   }
   .hero-dates b{color:var(--sun-gold);font-weight:700;}
@@ -183,7 +186,8 @@
   .route-stop b{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;font-family:var(--font-body);font-weight:700;}
   .route-stop span{display:block;font-size:.62rem;opacity:.6;font-family:var(--font-mono);}
 
-  .intro{max-width:62ch;margin:40px auto 0;text-align:center;font-size:1.02rem;opacity:.85;padding:0 8px;}
+  .intro{max-width:64ch;margin:40px auto 0;text-align:center;font-size:1.02rem;opacity:.85;padding:0 8px;}
+  .intro .callout{display:block;margin-top:10px;font-size:.86rem;opacity:.75;font-family:var(--font-mono);}
 
   /* ---------- legs ---------- */
   .leg{margin-top:88px;scroll-margin-top:70px;}
@@ -227,8 +231,8 @@
   .day-main h4{font-family:var(--font-body);font-weight:700;font-size:1.02rem;margin-bottom:4px;}
   .day-main p{font-size:.92rem;opacity:.82;}
   .split{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
-  .split-item{flex:1 1 170px;border-left:3px solid var(--ocean-bright);border-radius:0 8px 8px 0;background:rgba(28,134,199,.08);padding:7px 10px;}
-  .split-item.who-kim{border-left-color:var(--jeep-red);background:rgba(200,64,46,.08);}
+  .split-item{flex:1 1 170px;border-left:3px solid var(--palm-green);border-radius:0 8px 8px 0;background:rgba(60,143,78,.1);padding:7px 10px;}
+  .split-item.who-kim{border-left-color:var(--jeep-red);background:rgba(232,93,76,.08);}
   .split-who{font-family:var(--font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;opacity:.65;display:block;margin-bottom:2px;}
   .split-item p{font-size:.86rem;opacity:.85;}
   .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
@@ -240,6 +244,7 @@
   .tag.sea{color:var(--palm-green);border-color:var(--palm-green);}
   .tag.hike{color:var(--jeep-red);border-color:var(--jeep-red);}
   .tag.rest{opacity:.55;}
+  .tag.note{color:var(--sun-gold);border-color:var(--sun-gold);opacity:1;}
 
   /* ---------- carousel ---------- */
   .carousel{position:relative;margin:30px 0 10px;}
@@ -299,20 +304,25 @@
   .scene .falls{position:absolute;top:0;background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(210,240,245,.65));border-radius:0 0 40% 40%;filter:blur(.3px);}
   .scene .falls::after{content:"";position:absolute;left:-30%;right:-30%;bottom:-6px;height:10px;background:rgba(255,255,255,.8);border-radius:50%;filter:blur(2px);}
   .scene .trunk-big{position:absolute;bottom:0;background:linear-gradient(180deg,#8a6438,#4d331a);border-radius:6px 6px 0 0;}
+  .scene .cave{position:absolute;border-radius:50%;background:radial-gradient(circle at 50% 42%, #0c0c0c 45%, #000 100%);}
+  .scene .wreck{position:absolute;background:linear-gradient(180deg,#3a3a3a,#101010);border-radius:45% 10% 10% 45%;}
+  .scene .wreck::after{content:"";position:absolute;left:22%;bottom:100%;width:2px;height:22px;background:#101010;}
 
-  /* Pampanga (arrival, dusk, nipa hut) */
-  .scene--pampanga{--sky-a:#F7CE85;--sky-b:#B85C6B;--sea-a:#c98a55;--sea-b:#5b3a2a;--land:#6f4a2e;--land2:#3d2a1c;--accent:#FFDE8A;}
-  /* El Nido (turquoise karsts) */
-  .scene--elnido{--sky-a:#BDEBFF;--sky-b:#4FB3DE;--sea-a:#22C1D6;--sea-b:#0A5C79;--land:#7fa88c;--land2:#3f6350;--accent:#FFE28A;}
-  /* Bohol (chocolate hills) */
-  .scene--bohol{--sky-a:#CFEAFF;--sky-b:#7FC1E8;--sea-a:#0f8f7a;--sea-b:#0a5c4d;--land:#8a5a34;--land2:#5c3c22;--accent:#FFD37A;}
-  /* Siquijor (jungle waterfall, mystic island) */
-  .scene--siquijor{--sky-a:#DCEFC8;--sky-b:#8FC08A;--sea-a:#2FA6A0;--sea-b:#116B66;--land:#3E7D4C;--land2:#1F4A2A;--accent:#CFF4D8;}
+  /* Las Pinas (urban, daytime arrival) */
+  .scene--metro{--sky-a:#BFE3F5;--sky-b:#4FA0C9;--sea-a:#4FA0C9;--sea-b:#1C6FA0;--land:#8a7d68;--land2:#4a4438;--accent:#FFDE8A;}
   /* Las Pinas Christmas (night, parol) */
   .scene--laspinas{--sky-a:#16324f;--sky-b:#081824;--sea-a:#16324f;--sea-b:#081824;--land:#0e2438;--land2:#081824;--accent:#F5B300;}
+  /* Puerto Princesa (underground river, jungle river cliff) */
+  .scene--puertoprincesa{--sky-a:#DCEFC8;--sky-b:#6FA46B;--sea-a:#2B8F86;--sea-b:#0F4F49;--land:#6b6f5c;--land2:#3a3d30;--accent:#FFE9A8;}
+  /* Honda Bay (turquoise islets) */
+  .scene--hondabay{--sky-a:#CDEFFB;--sky-b:#57BFDD;--sea-a:#26BCC9;--sea-b:#0A5C79;--land:#cdb98a;--land2:#a3925f;--accent:#FFE28A;}
+  /* El Nido (turquoise karsts) */
+  .scene--elnido{--sky-a:#BDEBFF;--sky-b:#4FB3DE;--sea-a:#22C1D6;--sea-b:#0A5C79;--land:#7fa88c;--land2:#3f6350;--accent:#FFE28A;}
+  /* Coron (limestone lakes, wrecks) */
+  .scene--coron{--sky-a:#CFF0EA;--sky-b:#6FC9BC;--sea-a:#0FD2B0;--sea-b:#046B5C;--land:#4a4d3f;--land2:#24261d;--accent:#FFE28A;}
   /* Boracay (sunset) */
   .scene--boracay{--sky-a:#FFD6A5;--sky-b:#B15C8C;--sea-a:#2AACC7;--sea-b:#0A5C79;--land:#e8d8b0;--land2:#c9b184;--accent:#FF8A5B;}
-  /* Cordillera (Baguio-Pulag-Sagada, sea of clouds) */
+  /* Cordillera (Baguio-Pulag, sea of clouds) */
   .scene--cordillera{--sky-a:#BFD9E8;--sky-b:#5D82A3;--sea-a:#a9c3d4;--sea-b:#7a99b0;--land:#3a5a4a;--land2:#233b30;--accent:#FFE3A3;}
   /* Departure dawn */
   .scene--departure{--sky-a:#FFE1B0;--sky-b:#3D6C9E;--sea-a:#3D6C9E;--sea-b:#0A3D62;--land:#0A3D62;--land2:#082d49;--accent:#FFC94A;}
@@ -337,7 +347,7 @@
         <circle cx="32" cy="32" r="30" fill="none" stroke="var(--sun-gold)" stroke-width="2"/>
         <circle cx="32" cy="32" r="24" fill="var(--ocean-deep)"/>
         <path id="arcPath" d="M 10,32 A 22,22 0 0,1 54,32" fill="none"/>
-        <text font-family="Arial Black, sans-serif" font-size="4.6" fill="#F7ECD6" letter-spacing="0.3">
+        <text font-family="Arial Black, sans-serif" font-size="4.6" fill="#E9F3EF" letter-spacing="0.3">
           <textPath href="#arcPath" startOffset="50%" text-anchor="middle">BATMAN · CATWOMAN</textPath>
         </text>
         <g fill="var(--sun-gold)">
@@ -345,21 +355,21 @@
         </g>
         <path d="M20,42 q12,6 24,0" stroke="var(--sun-gold)" stroke-width="1.4" fill="none"/>
       </svg>
-      <span>Batman &amp; Catwoman</span>
+      <span>Batman &amp; Catwoman <span class="brand-badge">Plan C</span></span>
     </div>
     <div class="chips" id="chips">
-      <button class="chip" data-target="#leg-pampanga">1 · Pampanga</button>
-      <button class="chip" data-target="#leg-elnido">2 · El Nido</button>
-      <button class="chip" data-target="#leg-bohol">3 · Bohol</button>
-      <button class="chip" data-target="#leg-laspinas">4 · Christmas</button>
+      <button class="chip" data-target="#leg-laspinas">1 · Las Piñas</button>
+      <button class="chip" data-target="#leg-palawan">2 · Palawan</button>
+      <button class="chip" data-target="#leg-christmas">3 · Christmas</button>
+      <button class="chip" data-target="#leg-pulag">4 · Pulag</button>
       <button class="chip" data-target="#leg-boracay">5 · Boracay</button>
-      <button class="chip" data-target="#leg-cordillera">6 · Cordillera</button>
+      <button class="chip" data-target="#leg-homeward">6 · Homeward</button>
       <button class="chip" data-target="#leg-departure">7 · Departure</button>
     </div>
     <div class="plan-switch">
-      <a class="plan-chip current" href="index.html">A</a>
+      <a class="plan-chip" href="index.html">A</a>
       <a class="plan-chip" href="plan-b.html">B</a>
-      <a class="plan-chip" href="plan-c.html">C</a>
+      <a class="plan-chip current" href="plan-c.html">C</a>
     </div>
   </div>
 </nav>
@@ -379,9 +389,9 @@
     </div>
   </div>
   <div class="hero-content">
-    <span class="hero-eyebrow">Twenty‑six days · Seven legs · One loop back home</span>
+    <span class="hero-eyebrow">Plan <b>C</b> · Twenty‑six days · Seven legs · Palawan, all in</span>
     <h1>Philippines<em>End‑of‑Year Run</em></h1>
-    <p class="hero-sub">Karsts, chocolate hills, a Christmas at home, a New Year on white sand, and a sunrise above the clouds on Luzon's highest peak — mapped out day by day.</p>
+    <p class="hero-sub">Bohol, Siquijor, Cebu, and Sagada all drop out. Palawan gets a full week — Puerto Princesa, El Nido, and a two‑day boat expedition to Coron — while Christmas stays a real day off, and the last stretch stays close to home.</p>
     <div class="hero-dates">DEC <b>13</b> — MANILA ARRIVAL &nbsp;·&nbsp; JAN <b>07</b> — MANILA DEPARTURE</div>
   </div>
 </header>
@@ -391,227 +401,165 @@
     <div class="glance-stats">
       <div class="stat"><b>26</b><span>Days</span></div>
       <div class="stat"><b>7</b><span>Legs</span></div>
-      <div class="stat"><b>5</b><span>Islands</span></div>
+      <div class="stat"><b>3</b><span>Islands</span></div>
       <div class="stat"><b>1</b><span>Summit sunrise</span></div>
-      <div class="stat"><b>4</b><span>Certifying dives</span></div>
+      <div class="stat"><b>7</b><span>Days in Palawan</span></div>
     </div>
 
     <div class="route">
-      <h3>The Loop</h3>
+      <h3>The Loop — Plan C</h3>
       <div class="route-track" id="routeTrack">
         <div class="route-line"></div>
-        <button class="route-stop" data-target="#leg-pampanga"><span class="dotmark">1</span><b>Pampanga</b><span>Dec 13</span></button>
-        <button class="route-stop" data-target="#leg-elnido"><span class="dotmark">2</span><b>El Nido</b><span>Dec 15</span></button>
-        <button class="route-stop" data-target="#leg-bohol"><span class="dotmark">3</span><b>Bohol</b><span>Dec 18</span></button>
-        <button class="route-stop" data-target="#leg-laspinas"><span class="dotmark">4</span><b>Las Piñas</b><span>Dec 25</span></button>
+        <button class="route-stop" data-target="#leg-laspinas"><span class="dotmark">1</span><b>Las Piñas</b><span>Dec 13</span></button>
+        <button class="route-stop" data-target="#leg-palawan"><span class="dotmark">2</span><b>Palawan</b><span>Dec 17</span></button>
+        <button class="route-stop" data-target="#leg-christmas"><span class="dotmark">3</span><b>Christmas</b><span>Dec 24</span></button>
+        <button class="route-stop" data-target="#leg-pulag"><span class="dotmark">4</span><b>Pulag</b><span>Dec 26</span></button>
         <button class="route-stop" data-target="#leg-boracay"><span class="dotmark">5</span><b>Boracay</b><span>Dec 28</span></button>
-        <button class="route-stop" data-target="#leg-cordillera"><span class="dotmark">6</span><b>Cordillera</b><span>Jan 2</span></button>
+        <button class="route-stop" data-target="#leg-homeward"><span class="dotmark">6</span><b>Homeward</b><span>Jan 2</span></button>
         <button class="route-stop" data-target="#leg-departure"><span class="dotmark">7</span><b>Manila</b><span>Jan 7</span></button>
       </div>
     </div>
 
-    <p class="intro">Starts at Manila, picks up Kim in Las Piñas, then loops down through Palawan, Bohol, and a Siquijor detour, comes home for Christmas in Las Piñas, parties into the New Year on Boracay, then climbs into the Cordillera for one last push before flying out. Tap a stop above to jump straight there.</p>
+    <p class="intro">The simplest loop yet: Palawan absorbs everything Bohol, Siquijor, Cebu, and Sagada used to cover, running Puerto Princesa straight into El Nido and out to a two‑day island‑hopping expedition to Coron. Christmas is untouched in Las Piñas, Pulag is a clean two‑day in‑and‑out, and the final week eases home through Manila, Pampanga, and Las Piñas. Tap a stop above to jump straight there.</p>
   </div>
 
-  <!-- LEG 1 — PAMPANGA -->
-  <section class="leg" id="leg-pampanga">
+  <!-- LEG 1 — LAS PIÑAS -->
+  <section class="leg" id="leg-laspinas">
     <div class="leg-hero">
-      <div class="scene scene--pampanga">
-        <div class="sun" style="width:90px;height:90px;top:14%;right:14%;"></div>
-        <div class="roofline" style="left:6%;bottom:8%;width:120px;height:60px;"></div>
-        <div class="roofline" style="left:16%;bottom:8%;width:90px;height:44px;"></div>
-        <div class="palm-trunk" style="left:78%;bottom:6%;height:70px;transform:rotate(4deg);"></div>
-        <div class="palm-frond" style="left:78%;bottom:70px;transform:rotate(-30deg);"></div>
-        <div class="palm-frond" style="left:78%;bottom:66px;transform:rotate(10deg);"></div>
-        <div class="palm-frond" style="left:78%;bottom:62px;transform:rotate(50deg);"></div>
-        <div class="plane" style="top:22%;left:20%;transform:rotate(-8deg);"></div>
-        <div class="trail" style="top:calc(22% + 4px);left:2%;width:18%;"></div>
-        <div class="sea" style="height:16%;"></div>
+      <div class="scene scene--metro">
+        <div class="sun" style="width:80px;height:80px;top:12%;right:14%;"></div>
+        <div class="cloud" style="width:100px;height:20px;top:20%;left:12%;"></div>
+        <div class="roofline" style="left:6%;bottom:8%;width:120px;height:56px;"></div>
+        <div class="roofline" style="left:18%;bottom:8%;width:90px;height:42px;"></div>
+        <div class="roofline" style="left:30%;bottom:8%;width:70px;height:34px;opacity:.8;"></div>
+        <div class="palm-trunk" style="left:80%;bottom:6%;height:70px;transform:rotate(4deg);"></div>
+        <div class="palm-frond" style="left:80%;bottom:70px;transform:rotate(-30deg);"></div>
+        <div class="palm-frond" style="left:80%;bottom:66px;transform:rotate(10deg);"></div>
+        <div class="plane" style="top:24%;left:18%;transform:rotate(-8deg);"></div>
+        <div class="trail" style="top:calc(24% + 4px);left:0;width:18%;"></div>
+        <div class="sea" style="height:14%;"></div>
       </div>
       <div class="leg-hero-caption">
-        <span class="leg-num">Leg 01 · Dec 13 – Dec 14</span>
-        <h2>Pampanga</h2>
-        <p>Touchdown and a couple of slow days before the islands</p>
+        <span class="leg-num">Leg 01 · Dec 13 – Dec 16</span>
+        <h2>Las Piñas</h2>
+        <p>Touchdown, family, and last‑minute prep</p>
       </div>
     </div>
     <div class="leg-body">
       <div class="day-list">
         <article class="day reveal"><div class="day-date"><span class="dow">Sun</span><span class="dnum">13</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Arrival in the Philippines</h4><p>Land at Manila (MNL), head to Pampanga, rest with family after the flight.</p>
+          <div class="day-main"><h4>Arrive Manila → Las Piñas</h4><p>Land at Manila (MNL), head straight to Las Piñas, rest with family.</p>
           <div class="tag-row"><span class="tag fly">Flight in</span><span class="tag rest">Family time</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Mon</span><span class="dnum">14</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Pampanga, wide open</h4><p>Flexible day for family time, errands, and locking in bookings.</p>
+        <article class="day reveal"><div class="day-date"><span class="dow">Mon–Wed</span><span class="dnum">14–16</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Family time &amp; prep</h4><p>Flexible days for family time, errands, and locking in Palawan and Coron bookings.</p>
           <div class="tag-row"><span class="tag rest">Flexible</span><span class="tag rest">Bookings</span></div></div></article>
       </div>
     </div>
   </section>
 
-  <!-- LEG 2 — EL NIDO -->
-  <section class="leg" id="leg-elnido">
+  <!-- LEG 2 — PALAWAN -->
+  <section class="leg" id="leg-palawan">
     <div class="leg-hero">
-      <div class="scene scene--elnido">
-        <div class="sun" style="width:70px;height:70px;top:10%;right:10%;"></div>
-        <div class="cloud" style="width:100px;height:22px;top:16%;left:10%;"></div>
-        <div class="sea" style="height:34%;"></div>
-        <div class="karst" style="left:2%;width:70px;height:130px;clip-path:polygon(10% 100%,0 55%,35% 20%,55% 40%,70% 10%,100% 45%,90% 100%);"></div>
-        <div class="karst" style="left:32%;width:90px;height:100px;opacity:.85;clip-path:polygon(0 100%,15% 40%,45% 10%,70% 45%,100% 30%,90% 100%);"></div>
-        <div class="karst" style="left:66%;width:80px;height:150px;clip-path:polygon(5% 100%,0 50%,30% 15%,60% 35%,85% 5%,100% 40%,95% 100%);"></div>
-        <div class="boat" style="width:36px;height:12px;left:44%;bottom:20%;"></div>
+      <div class="scene scene--coron">
+        <div class="sun" style="width:60px;height:60px;top:10%;right:16%;"></div>
+        <div class="cloud" style="width:90px;height:18px;top:18%;left:10%;"></div>
+        <div class="sea" style="height:32%;"></div>
+        <div class="karst" style="left:-2%;width:80px;height:150px;clip-path:polygon(10% 100%,0 55%,35% 20%,55% 40%,70% 10%,100% 45%,90% 100%);"></div>
+        <div class="karst" style="left:70%;width:90px;height:140px;clip-path:polygon(5% 100%,0 50%,30% 15%,60% 35%,85% 5%,100% 40%,95% 100%);"></div>
+        <div class="boat" style="width:30px;height:10px;left:44%;bottom:34%;"></div>
       </div>
       <div class="leg-hero-caption">
-        <span class="leg-num">Leg 02 · Dec 15 – Dec 17</span>
-        <h2>El Nido, Palawan</h2>
-        <p>Limestone cliffs, hidden lagoons, sunset over Corong‑Corong</p>
+        <span class="leg-num">Leg 02 · Dec 17 – Dec 23</span>
+        <h2>Palawan — Puerto Princesa, El Nido &amp; Coron</h2>
+        <p>Seven days, three faces of Palawan — underground rivers, lagoons, and a two‑day expedition to Coron's wrecks and lakes</p>
       </div>
     </div>
     <div class="leg-body">
       <div class="day-list">
-        <article class="day reveal"><div class="day-date"><span class="dow">Tue</span><span class="dnum">15</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Pampanga → Las Piñas → El Nido</h4><p>Pick up Kim in Las Piñas, then fly MNL → El Nido (ENI) via AirSwift or Cebgo. Check in, catch sunset at Corong‑Corong / Las Cabañas.</p>
-          <div class="tag-row"><span class="tag rest">Pick up Kim</span><span class="tag fly">Flight</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">16</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Island Hopping — Tour A</h4><p>Big Lagoon, Secret Lagoon, Shimizu Island, 7 Commandos Beach.</p>
-          <div class="tag-row"><span class="tag sea">Island hopping</span></div></div></article>
         <article class="day reveal"><div class="day-date"><span class="dow">Thu</span><span class="dnum">17</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Tour C or Nacpan Beach</h4><p>Either Tour C (Matinloc, hidden beaches) or a full day at Nacpan — or split the two.</p>
-          <div class="tag-row"><span class="tag sea">Island hopping</span><span class="tag rest">Beach day</span></div></div></article>
+          <div class="day-main"><h4>Las Piñas → Puerto Princesa</h4><p>Fly MNL → Puerto Princesa (PPS). Afternoon: Honda Bay island‑hopping — snorkeling and a beach BBQ.</p>
+          <div class="tag-row"><span class="tag fly">Flight</span><span class="tag sea">Island hopping</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Fri</span><span class="dnum">18</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Underground River</h4><p>Full‑day UNESCO paddle‑boat tour through the cave system. Evening: firefly‑watching mangrove paddle cruise.</p>
+          <div class="tag-row"><span class="tag sea">Paddle tour</span><span class="tag rest">Fireflies</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Sat</span><span class="dnum">19</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Puerto Princesa → El Nido</h4><p>Early van departs 5:00–5:30am, arrives El Nido ~10:00–10:30am — the whole afternoon is free. Kayaking or a short lagoon paddle near Corong‑Corong, then sunset.</p>
+          <div class="tag-row"><span class="tag hike">Early van</span><span class="tag sea">Kayaking</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Sun</span><span class="dnum">20</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>El Nido — Tour A</h4><p>Big Lagoon, Secret Lagoon, Shimizu Island, 7 Commandos Beach.</p>
+          <div class="tag-row"><span class="tag sea">Island hopping</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Mon</span><span class="dnum">21</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>El Nido → Coron — Expedition, Day 1</h4><p>Board the island‑hopping expedition boat through the Linapacan Islands — remote reefs and sandbars, camping overnight on a beach.</p>
+          <div class="tag-row"><span class="tag sea">Expedition</span><span class="tag rest">Island camp</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Tue</span><span class="dnum">22</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Expedition, Day 2 → Coron town</h4><p>More island stops through the Calamianes, arriving into Coron town by evening for check‑in.</p>
+          <div class="tag-row"><span class="tag sea">Expedition</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">23</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Coron lakes &amp; wrecks → Manila</h4><p>Kayangan Lake, Twin Lagoon, and Barracuda Lake, plus shipwreck snorkeling over the WWII Japanese fleet, then fly Coron (USU) → Manila (MNL) in time for Christmas.</p>
+          <div class="tag-row"><span class="tag sea">Lakes &amp; wrecks</span><span class="tag fly">Flight</span></div></div></article>
       </div>
 
-      <div class="carousel" data-autoplay="5000">
-        <div class="carousel-heading"><h3>El Nido Postcards</h3>
+      <div class="carousel" data-autoplay="5200">
+        <div class="carousel-heading"><h3>Palawan Postcards</h3>
           <div class="car-controls"><button class="car-btn prev" aria-label="Previous">‹</button><button class="car-btn next" aria-label="Next">›</button></div>
         </div>
         <div class="carousel-track">
+          <article class="slide"><div class="postcard scene scene--hondabay">
+              <div class="sea" style="height:55%;"></div>
+              <div class="hill" style="left:14%;width:46px;height:30px;"></div>
+              <div class="hill" style="left:44%;width:60px;height:38px;"></div>
+              <div class="palm-trunk" style="left:50%;bottom:38%;height:26px;"></div>
+              <div class="palm-frond" style="left:50%;bottom:62px;transform:rotate(-25deg);"></div>
+              <div class="boat" style="width:24px;height:8px;left:74%;bottom:30%;"></div>
+            </div><div class="slide-body"><h4>Honda Bay</h4><p>A scatter of sandbar islets, snorkeling and a beach BBQ.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--puertoprincesa">
+              <div class="sea" style="height:22%;"></div>
+              <div class="karst" style="left:-4%;width:110%;height:70%;clip-path:polygon(0 100%,0 40%,20% 20%,40% 45%,60% 15%,80% 40%,100% 25%,100% 100%);"></div>
+              <div class="cave" style="left:38%;bottom:22%;width:60px;height:52px;"></div>
+              <div class="boat" style="width:26px;height:8px;left:44%;bottom:24%;"></div>
+            </div><div class="slide-body"><h4>Underground River</h4><p>A UNESCO cave system, paddled by torchlight.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--puertoprincesa" style="--sky-a:#0b1f22;--sky-b:#123028;">
+              <div class="sea" style="height:20%;--sea-a:#0b2b28;--sea-b:#04120f;"></div>
+              <div class="canopy" style="left:10%;width:100px;height:70px;"></div>
+              <div class="canopy" style="left:66%;width:110px;height:80px;"></div>
+              <div class="spark" style="left:20%;top:40%;"></div>
+              <div class="spark" style="left:34%;top:55%;"></div>
+              <div class="spark" style="left:50%;top:35%;"></div>
+              <div class="spark" style="left:64%;top:50%;"></div>
+              <div class="spark" style="left:76%;top:30%;"></div>
+            </div><div class="slide-body"><h4>Firefly Mangroves</h4><p>An evening paddle cruise lit by thousands of fireflies.</p></div></article>
           <article class="slide"><div class="postcard scene scene--elnido">
               <div class="sea" style="height:45%;"></div>
               <div class="karst" style="left:10%;width:60px;height:90px;clip-path:polygon(10% 100%,0 50%,40% 10%,70% 40%,100% 20%,90% 100%);"></div>
               <div class="karst" style="left:55%;width:70px;height:70px;opacity:.8;clip-path:polygon(0 100%,20% 30%,60% 10%,100% 50%,85% 100%);"></div>
             </div><div class="slide-body"><h4>Big Lagoon</h4><p>Sheer karst walls wrapping glassy, jade‑green water.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--elnido">
-              <div class="sea" style="height:55%;"></div>
-              <div class="karst" style="left:20%;width:50px;height:60px;clip-path:polygon(0 100%,50% 0,100% 100%);"></div>
-              <div class="boat" style="width:30px;height:10px;left:50%;bottom:32%;"></div>
-            </div><div class="slide-body"><h4>Secret Lagoon</h4><p>A narrow swim‑through opening into a hidden pool.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--elnido">
-              <div class="sun" style="width:40px;height:40px;top:8%;right:16%;"></div>
-              <div class="sea" style="height:40%;"></div>
-              <div class="karst" style="left:0;width:100%;height:60px;opacity:.9;clip-path:polygon(0 100%,10% 40%,25% 60%,40% 20%,55% 55%,70% 15%,85% 50%,100% 100%);"></div>
-            </div><div class="slide-body"><h4>Shimizu Island</h4><p>A quiet reef stop between the bigger lagoon runs.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--elnido">
-              <div class="sky" style="position:absolute;inset:0;background:linear-gradient(180deg,#FFD6A5,#4FB3DE);"></div>
-              <div class="sea" style="height:38%;--sea-a:#2AACC7;--sea-b:#0A5C79;"></div>
-              <div class="palm-trunk" style="left:20%;bottom:38%;height:50px;"></div>
-              <div class="palm-frond" style="left:20%;bottom:82px;transform:rotate(-25deg);"></div>
-            </div><div class="slide-body"><h4>7 Commandos Beach</h4><p>Long stretch of sand, calm water, cold buko for lunch.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--elnido">
-              <div class="sea" style="height:30%;"></div>
-              <div class="karst" style="left:30%;width:90px;height:40px;opacity:.7;clip-path:polygon(0 100%,20% 30%,50% 60%,80% 20%,100% 100%);"></div>
-              <div class="palm-trunk" style="left:12%;bottom:28%;height:60px;transform:rotate(-6deg);"></div>
-              <div class="palm-frond" style="left:12%;bottom:82px;transform:rotate(-30deg);"></div>
-            </div><div class="slide-body"><h4>Nacpan Beach</h4><p>Four kilometres of golden sand, almost no crowds.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--coron" style="--sky-a:#FFD9A0;--sky-b:#5B6A8C;">
+              <div class="sea" style="height:24%;--sea-a:#1C86A0;--sea-b:#0A3D4E;"></div>
+              <div class="roofline" style="left:36%;bottom:24%;width:34px;height:26px;background:#C99A5B;"></div>
+              <div class="palm-trunk" style="left:60%;bottom:24%;height:44px;"></div>
+              <div class="palm-frond" style="left:60%;bottom:64px;transform:rotate(-25deg);"></div>
+              <div class="boat" style="width:22px;height:8px;left:14%;bottom:26%;"></div>
+              <div class="spark" style="left:20%;top:16%;"></div>
+              <div class="spark" style="left:74%;top:10%;"></div>
+            </div><div class="slide-body"><h4>Linapacan Expedition Camp</h4><p>A tent on a deserted sandbar between El Nido and Coron.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--coron">
+              <div class="sea" style="height:60%;"></div>
+              <div class="karst" style="left:-4%;width:60px;height:110px;clip-path:polygon(10% 100%,0 50%,40% 10%,70% 40%,100% 20%,90% 100%);"></div>
+              <div class="karst" style="left:74%;width:60px;height:100px;opacity:.9;clip-path:polygon(0 100%,20% 30%,60% 10%,100% 50%,85% 100%);"></div>
+            </div><div class="slide-body"><h4>Kayangan Lake</h4><p>Often called the cleanest lake in the country — ringed by limestone.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--coron" style="--sky-a:#0b2a28;--sky-b:#053a34;">
+              <div class="sea" style="height:80%;--sea-a:#0a6b5c;--sea-b:#031e19;"></div>
+              <div class="wreck" style="left:30%;bottom:12%;width:80px;height:20px;transform:rotate(-6deg);"></div>
+              <div class="boat" style="width:22px;height:8px;left:58%;bottom:70%;"></div>
+            </div><div class="slide-body"><h4>Coron Shipwrecks</h4><p>Sunken WWII Japanese fleet, snorkeled straight off the boat.</p></div></article>
         </div>
         <div class="car-dots"></div>
       </div>
     </div>
   </section>
 
-  <!-- LEG 3 — BOHOL -->
-  <section class="leg" id="leg-bohol">
-    <div class="leg-hero">
-      <div class="scene scene--bohol">
-        <div class="sun" style="width:60px;height:60px;top:8%;right:20%;"></div>
-        <div class="sea" style="height:12%;"></div>
-        <div class="hill" style="left:0;width:80px;height:60px;"></div>
-        <div class="hill" style="left:14%;width:100px;height:80px;"></div>
-        <div class="hill" style="left:32%;width:90px;height:65px;"></div>
-        <div class="hill" style="left:48%;width:110px;height:90px;"></div>
-        <div class="hill" style="left:66%;width:95px;height:60px;"></div>
-        <div class="hill" style="left:82%;width:85px;height:75px;"></div>
-      </div>
-      <div class="leg-hero-caption">
-        <span class="leg-num">Leg 03 · Dec 18 – Dec 24</span>
-        <h2>Bohol &amp; Siquijor</h2>
-        <p>Open Water certification, Balicasag, and a detour to mystic Siquijor</p>
-      </div>
-    </div>
-    <div class="leg-body">
-      <div class="day-list">
-        <article class="day reveal"><div class="day-date"><span class="dow">Fri</span><span class="dnum">18</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>El Nido → Bohol</h4><p>Fly ENI → Bohol (Panglao) via Manila or Cebu. Check in around Alona Beach, confirm the referral dive schedule.</p>
-          <div class="tag-row"><span class="tag fly">Flight</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Sat</span><span class="dnum">19</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Open Water referral — Day 1</h4>
-          <div class="split">
-            <div class="split-item who-you"><span class="split-who">You</span><p>Dives 1 &amp; 2 on the local reefs around Panglao.</p></div>
-            <div class="split-item who-kim"><span class="split-who">Kim</span><p>Chocolate Hills, Tarsier Sanctuary &amp; Loboc River day trip.</p></div>
-          </div>
-          <div class="tag-row"><span class="tag sea">Diving</span><span class="tag rest">Countryside</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Sun</span><span class="dnum">20</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Open Water referral — Day 2</h4>
-          <div class="split">
-            <div class="split-item who-you"><span class="split-who">You</span><p>Dives 3 &amp; 4 — certification complete.</p></div>
-            <div class="split-item who-kim"><span class="split-who">Kim</span><p>Turtle snorkel trip off Panglao / Pamilacan Island.</p></div>
-          </div>
-          <div class="tag-row"><span class="tag sea">Diving</span><span class="tag rest">Certified 🤿</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Mon</span><span class="dnum">21</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Balicasag fun dives</h4><p>Back together — two fun dives with the jackfish "tornado" and resident turtles.</p>
-          <div class="tag-row"><span class="tag sea">Diving</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Tue</span><span class="dnum">22</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Bohol → Siquijor</h4><p>Ferry from Tagbilaran/Panglao over to Siquijor. Afternoon at Cambugahay Falls and Salagdoong Beach, overnight in town.</p>
-          <div class="tag-row"><span class="tag sea">Ferry</span><span class="tag hike">Waterfalls</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">23</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Siquijor → back to Bohol</h4><p>Morning at the Old Enchanted Balete Tree and the fish spa beneath it, then ferry back to Tagbilaran.</p>
-          <div class="tag-row"><span class="tag sea">Ferry</span><span class="tag rest">Balete Tree</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Thu</span><span class="dnum">24</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Free morning, then fly to Manila</h4><p>Easy morning in Panglao, then Bohol (TAG) → Manila (MNL) in the evening — in time for Christmas.</p>
-          <div class="tag-row"><span class="tag rest">Free morning</span><span class="tag fly">Flight</span></div></div></article>
-      </div>
-
-      <div class="carousel" data-autoplay="5600">
-        <div class="carousel-heading"><h3>Bohol &amp; Siquijor Postcards</h3>
-          <div class="car-controls"><button class="car-btn prev" aria-label="Previous">‹</button><button class="car-btn next" aria-label="Next">›</button></div>
-        </div>
-        <div class="carousel-track">
-          <article class="slide"><div class="postcard scene scene--bohol">
-              <div class="sea" style="height:14%;"></div>
-              <div class="hill" style="left:-4%;width:70px;height:55px;"></div>
-              <div class="hill" style="left:18%;width:90px;height:75px;"></div>
-              <div class="hill" style="left:44%;width:80px;height:58px;"></div>
-              <div class="hill" style="left:66%;width:95px;height:80px;"></div>
-            </div><div class="slide-body"><h4>Chocolate Hills</h4><p>Over a thousand grass‑domed mounds across Carmen.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--bohol" style="--sky-a:#dff2ff;--sky-b:#b8e4d8;">
-              <div class="sea" style="height:60%;--sea-a:#0d9a86;--sea-b:#075c4f;"></div>
-              <div class="boat" style="width:26px;height:8px;left:40%;bottom:38%;"></div>
-            </div><div class="slide-body"><h4>Panglao Reef Dives</h4><p>Where Open Water referral dives 1–4 happen.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--bohol" style="--sky-a:#cdeffc;--sky-b:#7fd3d8;">
-              <div class="sea" style="height:70%;--sea-a:#0a7fa0;--sea-b:#053f52;"></div>
-              <div class="spark" style="left:30%;top:40%;"></div>
-              <div class="spark" style="left:46%;top:55%;"></div>
-              <div class="spark" style="left:60%;top:35%;"></div>
-              <div class="spark" style="left:70%;top:60%;"></div>
-            </div><div class="slide-body"><h4>Balicasag Island</h4><p>Jackfish tornado and green sea turtles, fun‑dive day.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--siquijor">
-              <div class="canopy" style="left:-6%;width:70px;height:90px;"></div>
-              <div class="canopy" style="left:70%;width:80px;height:100px;"></div>
-              <div class="falls" style="left:42%;width:16%;height:78%;"></div>
-              <div class="sea" style="height:16%;"></div>
-            </div><div class="slide-body"><h4>Cambugahay Falls</h4><p>Tiered turquoise pools deep in the jungle, rope swing included.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--siquijor" style="--sky-a:#EAF6D8;--sky-b:#A9D19C;">
-              <div class="sea" style="height:22%;--sea-a:#2FA6A0;--sea-b:#116B66;"></div>
-              <div class="trunk-big" style="left:42%;width:26px;height:70%;"></div>
-              <div class="canopy" style="left:22%;width:120px;height:70px;bottom:60%;"></div>
-              <div class="spark" style="left:20%;top:20%;"></div>
-              <div class="spark" style="left:70%;top:30%;"></div>
-              <div class="spark" style="left:55%;top:14%;"></div>
-            </div><div class="slide-body"><h4>Old Balete Tree</h4><p>A centuries‑old tree, a fish spa at its roots, said to hold healers' magic.</p></div></article>
-        </div>
-        <div class="car-dots"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEG 4 — LAS PINAS CHRISTMAS -->
-  <section class="leg" id="leg-laspinas">
+  <!-- LEG 3 — CHRISTMAS: LAS PIÑAS -->
+  <section class="leg" id="leg-christmas">
     <div class="leg-hero">
       <div class="scene scene--laspinas">
         <div class="lattice"></div>
@@ -628,16 +576,73 @@
         <div class="roofline" style="left:44%;bottom:0;width:130px;height:60px;"></div>
       </div>
       <div class="leg-hero-caption">
-        <span class="leg-num">Leg 04 · Dec 25 – Dec 27</span>
+        <span class="leg-num">Leg 03 · Dec 24 – Dec 25</span>
         <h2>Christmas — Las Piñas</h2>
-        <p>Home base, family, no major travel</p>
+        <p>A real day off — no diving, no travel</p>
       </div>
     </div>
     <div class="leg-body">
       <div class="day-list">
-        <article class="day reveal"><div class="day-date"><span class="dow">Fri–Sun</span><span class="dnum">25–27</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Christmas at home</h4><p>Three days in Las Piñas for the holiday and family time — the one deliberate pause in the loop.</p>
+        <article class="day reveal"><div class="day-date"><span class="dow">Thu–Fri</span><span class="dnum">24–25</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Christmas at home</h4><p>Two days in Las Piñas for the holiday and family time — untouched by the rest of the trip.</p>
           <div class="tag-row"><span class="tag rest">Family</span><span class="tag rest">Christmas</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEG 4 — MT. PULAG -->
+  <section class="leg" id="leg-pulag">
+    <div class="leg-hero">
+      <div class="scene scene--cordillera">
+        <div class="fog" style="width:160px;height:34px;top:44%;left:-4%;"></div>
+        <div class="fog" style="width:200px;height:40px;top:52%;left:40%;"></div>
+        <div class="fog" style="width:150px;height:30px;top:48%;left:78%;"></div>
+        <div class="pine" style="left:8%;"></div>
+        <div class="pine" style="left:16%;transform:scale(.8);"></div>
+        <div class="pine" style="left:76%;transform:scale(.9);"></div>
+        <div class="pine" style="left:86%;transform:scale(.7);"></div>
+      </div>
+      <div class="leg-hero-caption">
+        <span class="leg-num">Leg 04 · Dec 26 – Dec 27</span>
+        <h2>Mt. Pulag</h2>
+        <p>Two days, one sunrise above the clouds</p>
+      </div>
+    </div>
+    <div class="leg-body">
+      <div class="day-list">
+        <article class="day reveal"><div class="day-date"><span class="dow">Sat</span><span class="dnum">26</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Las Piñas → Baguio → Pulag jump‑off</h4><p>Bus to Baguio, then van to the Kabayan / Pulag ranger station. Homestay check‑in, locals cook.</p>
+          <div class="tag-row"><span class="tag hike">Overland</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Sun</span><span class="dnum">27</span><span class="mon">Dec</span></div>
+          <div class="day-main"><h4>Mt. Pulag summit</h4><p>Pre‑dawn start up the Ambangeg trail for sunrise above the sea of clouds, then descend and head back to Baguio.</p>
+          <div class="tag-row"><span class="tag hike">Sunrise trek</span></div></div></article>
+      </div>
+
+      <div class="carousel" data-autoplay="5700">
+        <div class="carousel-heading"><h3>Pulag Postcards</h3>
+          <div class="car-controls"><button class="car-btn prev" aria-label="Previous">‹</button><button class="car-btn next" aria-label="Next">›</button></div>
+        </div>
+        <div class="carousel-track">
+          <article class="slide"><div class="postcard scene scene--cordillera" style="--sky-a:#FFDDB0;--sky-b:#8AA9C8;">
+              <div class="fog" style="width:120px;height:24px;top:56%;left:20%;"></div>
+              <div class="pine" style="left:10%;"></div>
+              <div class="pine" style="left:24%;transform:scale(.7);"></div>
+              <div class="pine" style="left:80%;transform:scale(.9);"></div>
+            </div><div class="slide-body"><h4>Baguio</h4><p>Pine‑covered ridgelines on the way up from Manila.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--cordillera">
+              <div class="fog" style="width:130px;height:26px;top:50%;left:10%;"></div>
+              <div class="fog" style="width:150px;height:30px;top:60%;left:45%;"></div>
+              <div class="pine" style="left:20%;"></div>
+              <div class="pine" style="left:66%;transform:scale(.8);"></div>
+            </div><div class="slide-body"><h4>Sea of Clouds</h4><p>Pulag's summit floating above a rolling white blanket.</p></div></article>
+          <article class="slide"><div class="postcard scene scene--cordillera" style="--sky-a:#FFDDB0;--sky-b:#8AA9C8;">
+              <div class="sun" style="width:50px;height:50px;top:14%;left:60%;"></div>
+              <div class="fog" style="width:160px;height:28px;top:58%;left:0;"></div>
+              <div class="pine" style="left:10%;"></div>
+              <div class="pine" style="left:26%;transform:scale(.6);"></div>
+            </div><div class="slide-body"><h4>Ambangeg Trail</h4><p>The pre‑dawn push to catch first light at the summit.</p></div></article>
+        </div>
+        <div class="car-dots"></div>
       </div>
     </div>
   </section>
@@ -664,8 +669,8 @@
     <div class="leg-body">
       <div class="day-list">
         <article class="day reveal"><div class="day-date"><span class="dow">Mon</span><span class="dnum">28</span><span class="mon">Dec</span></div>
-          <div class="day-main"><h4>Manila → Boracay</h4><p>Fly MNL → Caticlan (or Kalibo), port transfer and boat to the island, check in.</p>
-          <div class="tag-row"><span class="tag fly">Flight</span><span class="tag sea">Boat transfer</span></div></div></article>
+          <div class="day-main"><h4>Baguio → Manila → Boracay</h4><p>Down from the mountains to Manila, then fly MNL → Caticlan (or Kalibo), boat transfer to the island, check in.</p>
+          <div class="tag-row"><span class="tag hike">Overland</span><span class="tag fly">Flight</span><span class="tag sea">Boat transfer</span></div></div></article>
         <article class="day reveal"><div class="day-date"><span class="dow">Tue–Thu</span><span class="dnum">29–31</span><span class="mon">Dec</span></div>
           <div class="day-main"><h4>Beach days, party nights</h4><p>Sunset yacht / party cruise, nightlife along the strip, watersports and island hopping by day.</p>
           <div class="tag-row"><span class="tag sea">Sunset cruise</span><span class="tag rest">Nightlife</span></div></div></article>
@@ -709,23 +714,20 @@
     </div>
   </section>
 
-  <!-- LEG 6 — CORDILLERA -->
-  <section class="leg" id="leg-cordillera">
+  <!-- LEG 6 — HOMEWARD -->
+  <section class="leg" id="leg-homeward">
     <div class="leg-hero">
-      <div class="scene scene--cordillera">
-        <div class="fog" style="width:160px;height:34px;top:44%;left:-4%;"></div>
-        <div class="fog" style="width:200px;height:40px;top:52%;left:40%;"></div>
-        <div class="fog" style="width:150px;height:30px;top:48%;left:78%;"></div>
-        <div class="pine" style="left:8%;"></div>
-        <div class="pine" style="left:16%;transform:scale(.8);"></div>
-        <div class="pine" style="left:76%;transform:scale(.9);"></div>
-        <div class="pine" style="left:86%;transform:scale(.7);"></div>
-        <div class="terrace" style="left:30%;bottom:0;width:40%;height:16px;clip-path:polygon(0 100%,0 60%,20% 60%,20% 40%,40% 40%,40% 20%,60% 20%,60% 0,100% 0,100% 100%);"></div>
+      <div class="scene scene--metro" style="--sky-a:#FFDFB8;--sky-b:#5D82A3;">
+        <div class="sun" style="width:70px;height:70px;top:14%;right:16%;"></div>
+        <div class="roofline" style="left:8%;bottom:8%;width:110px;height:50px;"></div>
+        <div class="roofline" style="left:22%;bottom:8%;width:90px;height:40px;opacity:.85;"></div>
+        <div class="roofline" style="left:58%;bottom:8%;width:100px;height:46px;opacity:.9;"></div>
+        <div class="sea" style="height:12%;"></div>
       </div>
       <div class="leg-hero-caption">
         <span class="leg-num">Leg 06 · Jan 2 – Jan 6</span>
-        <h2>Cordillera</h2>
-        <p>Baguio, a sea of clouds on Pulag, hanging coffins in Sagada</p>
+        <h2>Homeward — Manila, Pampanga &amp; Las Piñas</h2>
+        <p>No more big moves — just laundry, family, and easing back in</p>
       </div>
     </div>
     <div class="leg-body">
@@ -733,49 +735,15 @@
         <article class="day reveal"><div class="day-date"><span class="dow">Sat</span><span class="dnum">02</span><span class="mon">Jan</span></div>
           <div class="day-main"><h4>Boracay → Manila</h4><p>Flight back to Manila, laundry and repacking at the base.</p>
           <div class="tag-row"><span class="tag fly">Flight</span><span class="tag rest">Laundry</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Sun</span><span class="dnum">03</span><span class="mon">Jan</span></div>
-          <div class="day-main"><h4>Manila → Baguio → Pulag jump‑off</h4><p>Bus to Baguio, then van to the Kabayan / Pulag ranger station. Homestay check‑in for the night.</p>
-          <div class="tag-row"><span class="tag hike">Overland</span></div></div></article>
-        <article class="day reveal"><div class="day-date"><span class="dow">Mon</span><span class="dnum">04</span><span class="mon">Jan</span></div>
-          <div class="day-main"><h4>Mt. Pulag summit</h4><p>1–2am start up the Ambangeg trail for sunrise above the sea of clouds, then descend and head back to Baguio.</p>
-          <div class="tag-row"><span class="tag hike">Sunrise trek</span></div></div></article>
+        <article class="day reveal"><div class="day-date"><span class="dow">Sun–Mon</span><span class="dnum">03–04</span><span class="mon">Jan</span></div>
+          <div class="day-main"><h4>Pampanga</h4><p>Two decompressing days with family before the final stretch.</p>
+          <div class="tag-row"><span class="tag rest">Family time</span></div></div></article>
         <article class="day reveal"><div class="day-date"><span class="dow">Tue</span><span class="dnum">05</span><span class="mon">Jan</span></div>
-          <div class="day-main"><h4>Baguio → Sagada</h4><p>Echo Valley and the Hanging Coffins in the afternoon, overnight in Sagada town.</p>
-          <div class="tag-row"><span class="tag hike">Sightseeing</span></div></div></article>
+          <div class="day-main"><h4>Las Piñas</h4><p>Low‑key day — Kim's back to work, so it's a quiet one.</p>
+          <div class="tag-row"><span class="tag rest">Low‑key</span></div></div></article>
         <article class="day reveal"><div class="day-date"><span class="dow">Wed</span><span class="dnum">06</span><span class="mon">Jan</span></div>
-          <div class="day-main"><h4>Sagada → Pampanga</h4><p>Return transit via Baguio back to Pampanga to pack and rest before the flight out.</p>
-          <div class="tag-row"><span class="tag hike">Overland</span><span class="tag rest">Pack &amp; rest</span></div></div></article>
-      </div>
-
-      <div class="carousel" data-autoplay="5900">
-        <div class="carousel-heading"><h3>Cordillera Postcards</h3>
-          <div class="car-controls"><button class="car-btn prev" aria-label="Previous">‹</button><button class="car-btn next" aria-label="Next">›</button></div>
-        </div>
-        <div class="carousel-track">
-          <article class="slide"><div class="postcard scene scene--cordillera">
-              <div class="fog" style="width:130px;height:26px;top:50%;left:10%;"></div>
-              <div class="fog" style="width:150px;height:30px;top:60%;left:45%;"></div>
-              <div class="pine" style="left:20%;"></div>
-              <div class="pine" style="left:66%;transform:scale(.8);"></div>
-            </div><div class="slide-body"><h4>Sea of Clouds</h4><p>Pulag's summit floating above a rolling white blanket.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--cordillera" style="--sky-a:#FFDDB0;--sky-b:#8AA9C8;">
-              <div class="sun" style="width:50px;height:50px;top:14%;left:60%;"></div>
-              <div class="fog" style="width:160px;height:28px;top:58%;left:0;"></div>
-              <div class="pine" style="left:10%;"></div>
-              <div class="pine" style="left:26%;transform:scale(.6);"></div>
-            </div><div class="slide-body"><h4>Ambangeg Trail</h4><p>The pre‑dawn push to catch first light at the summit.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--cordillera" style="--sky-a:#dfe9ee;--sky-b:#93a8ad;">
-              <div class="terrace" style="left:5%;bottom:0;width:60px;height:80px;background:none;box-shadow:none;"></div>
-              <div class="coffin" style="left:20%;bottom:40%;"></div>
-              <div class="coffin" style="left:26%;bottom:34%;"></div>
-              <div class="coffin" style="left:32%;bottom:46%;"></div>
-              <div class="terrace" style="left:0;bottom:0;width:100%;height:34%;clip-path:polygon(0 100%,0 40%,100% 60%,100% 100%);"></div>
-            </div><div class="slide-body"><h4>Sagada Hanging Coffins</h4><p>Centuries‑old burial coffins fixed to the limestone cliff.</p></div></article>
-          <article class="slide"><div class="postcard scene scene--cordillera" style="--sky-a:#cfe3ea;--sky-b:#7d97a3;">
-              <div class="terrace" style="left:0;bottom:0;width:100%;height:70%;clip-path:polygon(0 100%,0 78%,15% 78%,15% 60%,30% 60%,30% 44%,48% 44%,48% 28%,66% 28%,66% 14%,82% 14%,82% 0,100% 0,100% 100%);"></div>
-            </div><div class="slide-body"><h4>Echo Valley</h4><p>Terraced limestone walls that carry sound for miles.</p></div></article>
-        </div>
-        <div class="car-dots"></div>
+          <div class="day-main"><h4>Las Piñas</h4><p>Last full day with family before flying out.</p>
+          <div class="tag-row"><span class="tag rest">Family time</span></div></div></article>
       </div>
     </div>
   </section>
@@ -798,7 +766,7 @@
     <div class="leg-body">
       <div class="day-list">
         <article class="day reveal"><div class="day-date"><span class="dow">Thu</span><span class="dnum">07</span><span class="mon">Jan</span></div>
-          <div class="day-main"><h4>Departure day</h4><p>Transfer to Manila (MNL) for the international flight home — loop closed.</p>
+          <div class="day-main"><h4>Departure day</h4><p>Short transfer to the airport (MNL) for the international flight home — loop closed.</p>
           <div class="tag-row"><span class="tag fly">Flight out</span></div></div></article>
       </div>
     </div>
@@ -807,15 +775,20 @@
 
 <footer>
   <svg class="emblem" viewBox="0 0 64 64" role="img" aria-label="Trip emblem">
-    <circle cx="32" cy="32" r="30" fill="none" stroke="#F5B300" stroke-width="2"/>
-    <circle cx="32" cy="32" r="24" fill="#0A3D62"/>
-    <g fill="#F5B300">
+    <circle cx="32" cy="32" r="30" fill="none" stroke="#FF9F45" stroke-width="2"/>
+    <circle cx="32" cy="32" r="24" fill="#0E5C55"/>
+    <g fill="#FF9F45">
       <polygon points="32,20 33.6,24.6 38.4,24.6 34.6,27.5 36,32 32,29.2 28,32 29.4,27.5 25.6,24.6 30.4,24.6"/>
     </g>
-    <path d="M20,42 q12,6 24,0" stroke="#F5B300" stroke-width="1.4" fill="none"/>
+    <path d="M20,42 q12,6 24,0" stroke="#FF9F45" stroke-width="1.4" fill="none"/>
   </svg>
   <h3>See you at Manila, Jan 7</h3>
-  <p>Twenty‑six days, seven legs, one loop — from a family Christmas to a sunrise above the clouds. Let's go.</p>
+  <p>Plan C: Palawan gets a full week including Coron, Christmas stays untouched, and everything else simplifies down to three islands.</p>
+  <div class="plan-switch" style="justify-content:center;margin-top:16px;">
+    <a class="plan-chip" href="index.html" style="border-color:rgba(255,255,255,.35);">A</a>
+    <a class="plan-chip" href="plan-b.html" style="border-color:rgba(255,255,255,.35);">B</a>
+    <a class="plan-chip current" href="plan-c.html" style="border-color:rgba(255,255,255,.35);">C</a>
+  </div>
 </footer>
 
 <script>
